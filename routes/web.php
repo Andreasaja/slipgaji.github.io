@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\MailController;
+//use App\Http\Controllers\SlipGajiController;
 
 
 /*
@@ -28,3 +29,10 @@ Route::get('/send-mail/{nama}', 'MailController@sendEmail');
 //dibawah ini contoh email yg sdh jalan
 //Route::get('send-mail', [MailController::class, 'index']);
 
+
+//Route::get('slipgajinya', [SlipGajiController::class, 'index']);
+
+//ini fungsinya untuk mendirect ke page trntntu saat get url first
+Route::get('/', function () {
+    return redirect('slipgajinya');
+});
