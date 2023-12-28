@@ -33,11 +33,13 @@ Route::get('/send-mail/{nama}', 'MailController@sendEmail');
 //Route::get('slipgajinya', [SlipGajiController::class, 'index']);
 
 //ini fungsinya untuk mendirect ke page trntntu saat get url first
- //Route::get('/', function () {
- //    return redirect('slipgajinya');
-// });
-
-
  Route::get('/', function () {
-     return view('welcome');
+     return redirect('slipgajinya');
  });
+
+
+//ini roting ny menju page defaulf(welcome) lalu ada tombol, dr tombol itu baru masuk ke rout view slipgajis
+
+ //Route::get('/', function () {
+   //  return view('welcome');
+// });
