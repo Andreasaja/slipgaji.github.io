@@ -20,6 +20,9 @@ class Slipgaji extends Model
         'gapok',
     ];
 
+
+    protected $table = 'slipgaji';
+
     //ini adlh default primary key, yaitu id, jk primary key dlm tabel selain id,
     //maka hrs d tulis sprti d bawah ini, idxsg adlh prmary key nya.
     //hrs d statiskan jk field(kolom) primary key nya bukan id

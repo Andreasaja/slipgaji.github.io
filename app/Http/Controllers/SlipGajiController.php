@@ -33,7 +33,12 @@ class SlipGajiController extends Controller
        // echo "This will never be executed.";
         //get posts
         //$posts = SlipGaji::latest()->paginate(15);
-        $posts = SlipGaji::latest()->paginate(10);
+
+        // jika Anda menggunakan order() atau last() dalam kueri Anda,
+        //mereka mungkin menggunakan Created_at secara default sehingga Anda harus menentukan kolom yang ingin Anda pesan..
+       // $posts = SlipGaji::latest('idxsg')->paginate(10);
+        //script d bwh ini sm artinya dgn d atas
+        $posts = SlipGaji::orderBy('nama', 'asc')->paginate(10);
 
 
 
