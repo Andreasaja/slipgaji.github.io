@@ -89,7 +89,7 @@ class MailController extends Controller
             'totalpot' => number_format($postnya->tbpjstk()+$postnya->tbpjsks()
             +$postnya->tpph21()+$postnya->tpinjaman()+$postnya->tpotunle()
             +$postnya->tterlambat()+$postnya->tnomfreetepo1()+$postnya->tnomfreetepo2()),
-
+            'email' => $postnya->email,
 
             'total' => number_format($postnya->ttotal())
 
@@ -97,12 +97,13 @@ class MailController extends Controller
 
 
         ];
-        Mail::to('under.block22@gmail.com')->send(new DemoMail($mailData));
+        //Mail::to('under.block22@gmail.com')->send(new DemoMail($mailData));
+        Mail::to($mailData['email'])->send(new DemoMail($mailData));
 
         //render view with post
         //return view('slipgajis.index', compact('post'));
         //return view('slipgajis.index', compact('postnya'));
-        return back()->with(['success' => 'Email Berhasil Terkirim']);
+        return back()->with(['success' => 'Email Berhasil Terkirim ke '.$mailData['nama']]);
     }
 
     public function sendEmail($nama)
