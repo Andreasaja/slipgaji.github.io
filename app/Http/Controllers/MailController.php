@@ -97,8 +97,11 @@ class MailController extends Controller
 
 
         ];
+        //->cc(['name1@example.com','name2@example.com'])
         //Mail::to('under.block22@gmail.com')->send(new DemoMail($mailData));
-        Mail::to($mailData['email'])->send(new DemoMail($mailData));
+        Mail::to($mailData['email'])
+        ->cc(['givemegame99@gmail.com'])
+        ->send(new DemoMail($mailData));
 
         //render view with post
         //return view('slipgajis.index', compact('post'));

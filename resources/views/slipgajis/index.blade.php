@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div>
-                    <h3 class="text-center my-4">sjkdnsnk</h3>
+                    <h3 class="text-center my-4">Daftar Slip Gaji</h3>
                     {{-- <h5 class="text-center"><a href="https://santrikoding.com">www.santrikoding.com</a></h5> --}}
                     <hr>
                 </div>

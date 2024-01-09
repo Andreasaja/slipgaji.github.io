@@ -5,7 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
 //use App\Http\Controllers\MailController;
-//use App\Http\Controllers\SlipGajiController;
+use App\Http\Controllers\SlipGajiController;
 
 
 /*
@@ -58,3 +58,7 @@ Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('acti
 //REGISTER
 Route::get('register', [RegisterController::class, 'register'])->name('register');
 Route::post('register/action', [RegisterController::class, 'actionregister'])->name('actionregister');
+
+//gabungan setelah sukses login
+//maka lgsung masuk ke halaman daftar slip gaji
+Route::get('daftarslipgaji', [SlipGajiController::class, 'index'])->name('daftarslipgaji')->middleware('auth');
